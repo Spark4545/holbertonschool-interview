@@ -13,34 +13,22 @@ def canUnlockAll(boxes):
         possibility (boolean): if all the boxes can be opened
     """
 
-    # Using a search algorithm
-    explored = []
-    frontier = [0]
+    opened = []
+    keys = [0]
     while True:
-        # If there are no boxes to explore
-        if frontier == []:
-            if len(explored) == len(boxes):
+        if keys == []:
+            if len(boxes) == len(opened):
                 return True
             else:
                 return False
-        if frontier[0] > len(boxes):
-            return False
-        for key in boxes[frontier[0]]:
-            # Add the current box to the explored list
-            if frontier[0] not in explored:
-                explored.append(frontier[0])
-            # Case when the box has no key in it
 
-            # if the key is for an unexplored box, add the key to the frontier
-            if key not in explored:
-                frontier.append(key)
-        if boxes[frontier[0]] == []:
-            explored.append(frontier[0])
-        # Remove the explored box from the frontier
-        frontier.pop(0)
+        current_key = keys[0]
+        keys.pop(0)
 
-        # print("Explored :", end="")
-        # print(explored)
-        # print("Frontier :", end="")
-        # print(frontier)
-        # print("=========")
+        if current_key < len(boxes):
+            opened.append(current_key)
+            for key in boxes[current_key]:
+                if key not in opened and key not in keys:
+                    keys.append(key)
+        else:
+            pass
