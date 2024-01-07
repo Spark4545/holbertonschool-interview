@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""summary
+""" Present with a list of lists, the nested list represent boxes
+    with keys inside them. The method needs to return the
+    possibility of all boxes being unlocked.
+    The first box is always unlocked.
 """
 
 
@@ -10,7 +13,8 @@ def canUnlockAll(boxes):
         boxes (nested list): list of the boxes with the keys inside
 
     Returns:
-        possibility (boolean): if all the boxes can be opened
+        boolean: if all the boxes can be opened return True,
+        else return False
     """
 
     opened = []
@@ -21,14 +25,12 @@ def canUnlockAll(boxes):
                 return True
             else:
                 return False
-
-        current_key = keys[0]
-        keys.pop(0)
-
-        if current_key < len(boxes):
-            opened.append(current_key)
-            for key in boxes[current_key]:
-                if key not in opened and key not in keys:
-                    keys.append(key)
         else:
-            pass
+            current_key = keys[0]
+            keys.pop(0)
+
+            if current_key < len(boxes):
+                opened.append(current_key)
+                for key in boxes[current_key]:
+                    if key not in opened and key not in keys:
+                        keys.append(key)
