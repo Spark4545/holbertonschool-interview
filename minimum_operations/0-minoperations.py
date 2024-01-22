@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-"""Summary
-"""
+"""Module which contains minoperations function"""
 
 
 def minOperations(n):
-    """Function to determine the minimal number of operation to
-    have n number of character in a file
+    """ Calculates the fewest number of operations needed
+        to result in exactly n H characters in the file
 
-    Args:
-        n (int): number of character to have in the file
+        Args:
+            n: repetitions of H
+
+        Returns:
+            number of operations (Copy & Paste) to reach n Hs
     """
     div = 2
     min_ops = 0
