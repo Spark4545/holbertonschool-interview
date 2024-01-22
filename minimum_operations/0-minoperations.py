@@ -4,7 +4,11 @@
 
 
 def minOperations(n):
-    """summary
+    """Function to determine the minimal number of operation to
+    have n number of character in a file
+
+    Args:
+        n (int): number of character to have in the file
     """
     div = 2
     min_ops = 0
