@@ -69,7 +69,8 @@ int *init_count(int nb_words)
  * @count: an array to store the number of times each word appears
  * Return: 1 if all words are present, otherwise 0
  */
-int check_words(const char *s, const char **words, int i, int nb_words, int word_len, int *count)
+int check_words(const char *s, const char **words,
+		int i, int nb_words, int word_len, int *count)
 {
 	int j, k;
 
@@ -84,7 +85,7 @@ int check_words(const char *s, const char **words, int i, int nb_words, int word
 				break;
 			}
 		}
-		if (k == nb_words) // No matching word found
+		if (k == nb_words)
 			return (0);
 	}
 	return (1);
@@ -103,7 +104,7 @@ int add_index_if_match(int *indices, int *n, int i, int match)
 	if (match)
 	{
 		indices[*n] = i;
-		return *n + 1;
+		return (*n + 1);
 }
-	return *n;
+	return (*n);
 }
