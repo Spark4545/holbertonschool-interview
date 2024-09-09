@@ -28,6 +28,7 @@ def isWinner(x, nums):
         if both players play optimally,
         or None, if the winner cannot be determined
     """
+    # Code
     Maria = 0
     Ben = 0
     if (x < 1 or x != len(nums)):
